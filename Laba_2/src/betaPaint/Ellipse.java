@@ -1,8 +1,8 @@
 package betaPaint;
 
 public class Ellipse extends Shape {
-	int width;
-	int height;
+	protected int width;
+	protected int height;
 
 	public Ellipse(int x, int y, int width, int height) {
 		super(x, y);

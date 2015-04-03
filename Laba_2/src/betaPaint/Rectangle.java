@@ -1,8 +1,8 @@
 package betaPaint;
 
 public class Rectangle extends Shape {
-	int width;
-	int height;
+	protected int width;
+	protected int height;
 	
 	public Rectangle(int x, int y, int width, int height) {
 		super(x, y);

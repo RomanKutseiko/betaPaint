@@ -6,29 +6,30 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="442.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="442.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXApp.Controller">
    <children>
       <SplitPane dividerPositions="0.24581939799331104" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Button layoutX="22.0" layoutY="23.0" minWidth="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="Line" />
-                  <Button layoutX="22.0" layoutY="69.0" minWidth="100.0" mnemonicParsing="false" text="Rectangle" />
-                  <Button layoutX="22.0" layoutY="118.0" minWidth="100.0" mnemonicParsing="false" text="Ellipse" />
-                  <Button layoutX="22.0" layoutY="166.0" minWidth="100.0" mnemonicParsing="false" text="Triangle" />
-                  <Button layoutX="22.0" layoutY="214.0" minWidth="100.0" mnemonicParsing="false" text="Parallelogram" />
+                  <Button fx:id="btnLine" layoutX="22.0" layoutY="23.0" minWidth="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="Line" />
+                  <Button fx:id="btnRectangle" layoutX="22.0" layoutY="69.0" minWidth="100.0" mnemonicParsing="false" text="Rectangle" />
+                  <Button fx:id="btnEllipse" layoutX="22.0" layoutY="118.0" minWidth="100.0" mnemonicParsing="false" onAction="#btnEllipseOnClick" text="Ellipse" />
+                  <Button fx:id="btnTriangle" layoutX="22.0" layoutY="166.0" minWidth="100.0" mnemonicParsing="false" text="Triangle" />
+                  <Button fx:id="btnParallelogram" layoutX="22.0" layoutY="214.0" minWidth="100.0" mnemonicParsing="false" text="Parallelogram" />
+                  <Button fx:id="but" layoutX="46.0" layoutY="263.0" mnemonicParsing="false" onAction="#btnConst" text="Button" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <SplitPane dividerPositions="0.22727272727272727" layoutX="144.0" orientation="VERTICAL" prefHeight="329.0" prefWidth="448.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="84.0" prefWidth="469.0">
+                      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="84.0" prefWidth="469.0">
                            <children>
-                              <TextField fx:id="TextX" layoutX="51.0" layoutY="14.0" prefHeight="25.0" prefWidth="137.0" />
-                              <TextField fx:id="TextY" layoutX="51.0" layoutY="49.0" prefHeight="25.0" prefWidth="137.0" />
-                              <TextField fx:id="TextWidth" layoutX="308.0" layoutY="14.0" prefHeight="25.0" prefWidth="137.0" />
-                              <TextField fx:id="TextHeight" layoutX="308.0" layoutY="49.0" prefHeight="25.0" prefWidth="137.0" />
+                              <TextField fx:id="textX" layoutX="51.0" layoutY="14.0" prefHeight="25.0" prefWidth="137.0" />
+                              <TextField fx:id="textY" layoutX="51.0" layoutY="49.0" prefHeight="25.0" prefWidth="137.0" />
+                              <TextField fx:id="textWidth" layoutX="308.0" layoutY="14.0" prefHeight="25.0" prefWidth="137.0" />
+                              <TextField fx:id="textHeight" layoutX="308.0" layoutY="49.0" prefHeight="25.0" prefWidth="137.0" />
                               <Label layoutX="14.0" layoutY="18.0" text="X" />
                               <Label layoutX="14.0" layoutY="53.0" text="Y" />
                               <Label layoutX="258.0" layoutY="18.0" text="Width" />
@@ -37,7 +38,7 @@
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                            <children>
-                              <Canvas height="335.0" layoutX="-1.0" width="471.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <Canvas height="335.0" width="471.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children>
                         </AnchorPane>
                     </items>

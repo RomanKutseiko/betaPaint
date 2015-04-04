@@ -41,39 +41,38 @@ public class Controller implements Initializable {
 		return a;
 	}
 	
+	private boolean isValidData(){
+		return (isNumber(textX.getText()) && isNumber(textY.getText()) && isNumber(textWidth.getText()) && isNumber(textHeight.getText()));
+	}
+	
 	@FXML
 	private void btnEllipseOnClick() {
-		if (isNumber(textX.getText()) && isNumber(textY.getText()) && isNumber(textWidth.getText()) && isNumber(textHeight.getText()))
-			Drawer.Draw(new Ellipse(getX(), getY(), getWidth(), getHeight()), gc);
-		else ;
+		if (isValidData())
+			Drawer.draw(new Ellipse(getX(), getY(), getWidth(), getHeight()), gc);
 	}
 	
 	@FXML
 	private void btnTriangleOnClick() {
-		if (isNumber(textX.getText()) && isNumber(textY.getText()) && isNumber(textWidth.getText()) && isNumber(textHeight.getText()))
-		Drawer.Draw(new Triangle(getX(), getY(), getWidth(), getHeight()), gc);
-		else ;
+		if (isValidData())
+		Drawer.draw(new Triangle(getX(), getY(), getWidth(), getHeight()), gc);
 	}
 	
 	@FXML
 	private void btnRectangleOnClick() {
-		if (isNumber(textX.getText()) && isNumber(textY.getText()) && isNumber(textWidth.getText()) && isNumber(textHeight.getText()))
-		Drawer.Draw(new Rectangle(getX(), getY(), getWidth(), getHeight()), gc);
-		else ;
+		if (isValidData())
+		Drawer.draw(new Rectangle(getX(), getY(), getWidth(), getHeight()), gc);
 	}
 	
 	@FXML
 	private void btnLineOnClick() {
-		if (isNumber(textX.getText()) && isNumber(textY.getText()) && isNumber(textWidth.getText()) && isNumber(textHeight.getText()))
-		Drawer.Draw(new Line(getX(), getY(), getWidth(), getHeight()), gc);
-		else ;
+		if (isValidData())
+		Drawer.draw(new Line(getX(), getY(), getWidth(), getHeight()), gc);
 	}
 	
 	@FXML
 	private void btnParallelogramOnClick() {
-		if (isNumber(textX.getText()) && isNumber(textY.getText()) && isNumber(textWidth.getText()) && isNumber(textHeight.getText()))
-		Drawer.Draw(new Parallelogram(getX(), getY(), getWidth(), getHeight()), gc);
-		else ;
+		if (isValidData())
+		Drawer.draw(new Parallelogram(getX(), getY(), getWidth(), getHeight()), gc);
 	}
 	
 	

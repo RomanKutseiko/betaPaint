@@ -4,19 +4,19 @@ import javafx.scene.canvas.GraphicsContext;
 
 public class Drawer {
 	
-	public static void Draw(Ellipse ellipse, GraphicsContext gc){		
+	public static void draw(Ellipse ellipse, GraphicsContext gc){		
 		gc.fillOval(ellipse.getX(), ellipse.getY(), ellipse.getWidth(), ellipse.getHeight());
 	}
 
-	public static void Draw(Line line, GraphicsContext gc){		
+	public static void draw(Line line, GraphicsContext gc){		
 		gc.strokeLine(line.getX(), line.getY(), line.getWidth(), line.getHeight());
 	}
 
-	public static void Draw(Rectangle rect, GraphicsContext gc){		
+	public static void draw(Rectangle rect, GraphicsContext gc){		
 		gc.fillRect(rect.getX(), rect.getY(), rect.getWidth(), rect.getHeight());
 	}
 	
-	public static void Draw(Triangle triangle, GraphicsContext gc){		
+	public static void draw(Triangle triangle, GraphicsContext gc){		
 		double[] pointsX = new double[3]; //arrays are needed to create Polygons
 		double[] pointsY = new double[3];
 		pointsX[0] = triangle.getX(); 
@@ -28,7 +28,7 @@ public class Drawer {
 		gc.fillPolygon(pointsX, pointsY, 3); //3 (points), Triangle
 	}
 	
-	public static void Draw(Parallelogram parallelogram, GraphicsContext gc){		
+	public static void draw(Parallelogram parallelogram, GraphicsContext gc){		
 		double[] pointsX = new double[4]; //arrays are needed to create Polygons
 		double[] pointsY = new double[4];
 		pointsX[0] = parallelogram.getX(); 

@@ -1,18 +1,24 @@
 package FXApp;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.regex.Pattern;
+
+import betaPaint.Drawer;
+import betaPaint.Ellipse;
+import betaPaint.Line;
+import betaPaint.Parallelogram;
+import betaPaint.Rectangle;
+import betaPaint.Triangle;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
-import betaPaint.Ellipse;
-import betaPaint.Triangle;
-import betaPaint.Parallelogram;
-import betaPaint.Rectangle;
-import betaPaint.Line;
 
-public class Controller {
+public class Controller implements Initializable {
 	
 	@FXML
 	private Button btnEllipse, btnTriangle, btnRectangle, btnLine, btnParallelogram, but;
@@ -23,64 +29,51 @@ public class Controller {
 	@FXML
 	private Canvas canvas;
 	
+	private GraphicsContext gc;
+	
+	public void initialize(URL url, ResourceBundle resBun){
+		gc =  canvas.getGraphicsContext2D();
+		gc.setFill(Color.RED);
+	}
+	
+	private boolean isNumber(String str){
+		boolean a = Pattern.matches("[0-9]+", str);
+		return a;
+	}
+	
 	@FXML
 	private void btnEllipseOnClick() {
-		GraphicsContext gc = canvas.getGraphicsContext2D();
-		gc.setFill(Color.RED);
-		gc.fillOval(getX(), getY(), getWidth(), getHeight());
+		if (isNumber(textX.getText()) && isNumber(textY.getText()) && isNumber(textWidth.getText()) && isNumber(textHeight.getText()))
+			Drawer.Draw(new Ellipse(getX(), getY(), getWidth(), getHeight()), gc);
+		else ;
 	}
 	
 	@FXML
 	private void btnTriangleOnClick() {
-		GraphicsContext gc = canvas.getGraphicsContext2D();
-		gc.setFill(Color.RED);
-		double[] pointsX = new double[3]; //arrays are needed to create Polygons
-		double[] pointsY = new double[3];
-		pointsX[0] = getX(); 
-		pointsX[1] = getX()+(getWidth()/2);
-		pointsX[2] = getX()+getWidth();
-		pointsY[0] = getY()+ getHeight(); 
-		pointsY[1] = getY();
-		pointsY[2] = getX()+getHeight();
-		gc.fillPolygon(pointsX, pointsY, 3); //3 (points), Triangle
+		if (isNumber(textX.getText()) && isNumber(textY.getText()) && isNumber(textWidth.getText()) && isNumber(textHeight.getText()))
+		Drawer.Draw(new Triangle(getX(), getY(), getWidth(), getHeight()), gc);
+		else ;
 	}
 	
 	@FXML
 	private void btnRectangleOnClick() {
-		GraphicsContext gc = canvas.getGraphicsContext2D();
-		gc.setFill(Color.RED);
-		gc.fillRect(getX(), getY(), getWidth(), getHeight());
+		if (isNumber(textX.getText()) && isNumber(textY.getText()) && isNumber(textWidth.getText()) && isNumber(textHeight.getText()))
+		Drawer.Draw(new Rectangle(getX(), getY(), getWidth(), getHeight()), gc);
+		else ;
 	}
 	
 	@FXML
 	private void btnLineOnClick() {
-		GraphicsContext gc = canvas.getGraphicsContext2D();
-		gc.setFill(Color.RED);
-		gc.strokeLine(getX(), getY(), getWidth(), getHeight());
+		if (isNumber(textX.getText()) && isNumber(textY.getText()) && isNumber(textWidth.getText()) && isNumber(textHeight.getText()))
+		Drawer.Draw(new Line(getX(), getY(), getWidth(), getHeight()), gc);
+		else ;
 	}
 	
 	@FXML
 	private void btnParallelogramOnClick() {
-		GraphicsContext gc = canvas.getGraphicsContext2D();
-		gc.setFill(Color.RED);
-		double[] pointsX = new double[4]; //arrays are needed to create Polygons
-		double[] pointsY = new double[4];
-		pointsX[0] = getX(); 
-		pointsX[1] = getX()+(getHeight()/2);
-		pointsX[2] = getX()+getWidth();
-		pointsX[3] = getX()-(getHeight()/2);
-		pointsY[0] = getY(); 
-		pointsY[1] = getY()+getHeight();
-		pointsY[2] = getY()+getHeight();
-		pointsY[3] = getY();
-		gc.fillPolygon(pointsX, pointsY, 4); //4 (points)
-	}
-	
-	@FXML
-	private void btnConst(){
-		GraphicsContext gc = canvas.getGraphicsContext2D();
-		gc.setFill(Color.RED);
-		gc.fillOval(15, 15, 15, 15);
+		if (isNumber(textX.getText()) && isNumber(textY.getText()) && isNumber(textWidth.getText()) && isNumber(textHeight.getText()))
+		Drawer.Draw(new Parallelogram(getX(), getY(), getWidth(), getHeight()), gc);
+		else ;
 	}
 	
 	

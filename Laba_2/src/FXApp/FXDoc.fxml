@@ -12,12 +12,11 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="btnLine" layoutX="22.0" layoutY="23.0" minWidth="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="Line" />
-                  <Button fx:id="btnRectangle" layoutX="22.0" layoutY="69.0" minWidth="100.0" mnemonicParsing="false" text="Rectangle" />
+                  <Button fx:id="btnLine" layoutX="22.0" layoutY="23.0" minWidth="100.0" mnemonicParsing="false" onAction="#btnLineOnClick" prefHeight="25.0" prefWidth="52.0" text="Line" />
+                  <Button fx:id="btnRectangle" layoutX="22.0" layoutY="69.0" minWidth="100.0" mnemonicParsing="false" onAction="#btnRectangleOnClick" text="Rectangle" />
                   <Button fx:id="btnEllipse" layoutX="22.0" layoutY="118.0" minWidth="100.0" mnemonicParsing="false" onAction="#btnEllipseOnClick" text="Ellipse" />
-                  <Button fx:id="btnTriangle" layoutX="22.0" layoutY="166.0" minWidth="100.0" mnemonicParsing="false" text="Triangle" />
-                  <Button fx:id="btnParallelogram" layoutX="22.0" layoutY="214.0" minWidth="100.0" mnemonicParsing="false" text="Parallelogram" />
-                  <Button fx:id="but" layoutX="46.0" layoutY="263.0" mnemonicParsing="false" onAction="#btnConst" text="Button" />
+                  <Button fx:id="btnTriangle" layoutX="22.0" layoutY="166.0" minWidth="100.0" mnemonicParsing="false" onAction="#btnTriangleOnClick" text="Triangle" />
+                  <Button fx:id="btnParallelogram" layoutX="22.0" layoutY="214.0" minWidth="100.0" mnemonicParsing="false" onAction="#btnParallelogramOnClick" text="Parallelogram" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -38,7 +37,7 @@
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                            <children>
-                              <Canvas height="335.0" width="471.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <Canvas fx:id="canvas" height="335.0" width="471.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children>
                         </AnchorPane>
                     </items>
